@@ -30,7 +30,7 @@ const App = () => {
 
   const [expenses,setExpenses] = useState(DUMMY_EXPENSES)
 
-  const addExpense = expense =>{
+  const addExpenseHandler = expense =>{
     // setExpenses([expense,...DUMMY_EXPENSES]) is we learn the add expense depend on the prvius snapshot 
     // By expersion like this not be wrok correctly because when every time add one will depend in inital DUMMY_EXPENSES 
     // Not the snapshot that have one which we add in step befor so will be use function to pass in it perExpenses snapshot
@@ -42,7 +42,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <NewExpence onAddExpense ={addExpense} />
+      <NewExpence onAddExpense ={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
