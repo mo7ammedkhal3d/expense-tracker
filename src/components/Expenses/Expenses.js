@@ -50,21 +50,19 @@ const [filteredYear, setFilteredYear] = useState('2020');
 //#endregion
 
 //#region Types of components in react
-//state less or dump or presntational conponent
-// is that component which use for presnt some data or have some js code or
-// or some css code
-// another type of components is statefull or control components
-// is have state and also manage aother compoent by sending some data
+    //state less or dump or presntational conponent
+    // is that component which use for presnt some data or have some js code or some css code
+    // another type of components is statefull or control components
+    // is have state and also manage aother compoent by sending some data
 //#endregion
 
 //#region Why the List in react requier the {Key}
-// We beacause the react accourding spical behavior when add new items to array
-// When add new item to array react add new div of expense items in the last and then update the conentent of all dives
-// According to the order that we have in array because the react sees that divs is simmiler and only the conent is
-// differnt
-// this is not great because all items is visites and updated and if ther state item will lost data becaouse the div is
-//overriten by another
-// So ... we add key to tell react the item's divs of the list is have uniqe order and should reoder occourding to thoes
+    // We beacause the react accourding spical behavior when add new items to array
+    // When add new item to array react add new div of expense items in the last and then update the conentent of all dives
+    // According to the order that we have in array because the react sees that divs is simmiler and only the conent is differnt
+    // this is not great because all items is visites and updated and if ther state item will lost data becaouse the div is
+    //overriten by another
+    // So ... we add key to tell react the item's divs of the list is have uniqe order and should reoder occourding to thoes
 //#endregion
 
 const filterChangeHandler = (selectedYear) =>{
@@ -77,9 +75,9 @@ return expense.date.getFullYear().toString() === filteredYear;
 
 let expenseContent = <p>No expenses found.</p>;
 if(filteredExpenses.length > 0){
-expenseContent = filteredExpenses.map((expense)=>{
+expenseContent = filteredExpenses.map((expense)=>(
 <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />
-})
+))
 }
 
 
