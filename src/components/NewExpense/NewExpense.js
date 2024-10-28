@@ -3,9 +3,7 @@ import './NewExpense.css';
 import ExpenseFrom from "./ExpenseForm";
 
 const NewExpence = (props) =>{
-
-    const [isEditing,setIsEditing] = useState(false);
-
+    const [isEditing,setIsEditing] =useState(false);
     const saveExpenseDataHandler = (enteredExpenseData) =>{
         const expenseData = {
             ...enteredExpenseData,
@@ -14,12 +12,12 @@ const NewExpence = (props) =>{
         props.onAddExpense(expenseData);
     };
 
+    const stopEditingHandler = ()=>{
+        setIsEditing(false);
+    };
+
     const startEditingHandler = ()=>{
         setIsEditing(true);
-    }
-
-    const stopEditingHandler = () =>{
-        setIsEditing(false);
     };
 
     return (
